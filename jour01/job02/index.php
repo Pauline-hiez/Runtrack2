@@ -9,3 +9,5 @@ $world = "LaPlateforme!";
 
 echo $phrase;
 echo $hello . $world;
+
+?>
