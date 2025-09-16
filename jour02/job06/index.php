@@ -5,8 +5,9 @@ $hauteur = 10;
 
 for ($i = 0; $i < $hauteur; $i++) {
     for ($j = 0; $j < $largeur; $j++) {
-        echo ".";
+        echo "&#127796;";
     }
     echo "<br />\n";
 }
 
+?>
