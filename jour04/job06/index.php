@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire Rambo</title>
+    <title>Formulaire type GET</title>
 </head>
 <body>
 
-<form method="POST">
+    <form method="GET">
 
-    <label for="username">Utilisateur</label>
-    <input type="text" name="username">
-    <br><br>
+        <input type="text" name="nombre">
+        <button>Valider</button>
 
-    <label for="password">Mot de passe</label>
-    <input type="password" name="password">
-    <br><br>
+    </form>
 
-    <button>Valider</button>
+<?php
 
-</form>
+    if (isset($_GET["nombre"]) && $_GET["nombre"] !== "") {
+        $valeur = $_GET["nombre"];
+
+    if (is_numeric($valeur)){
+        if($valeur % 2==0) {
+        echo "<p style='color:#0d9e8bff;'><strong>Nombre pair</strong></p>";
+    } else {
+        echo "<p style='color:#0d9e8bff;'><strong>Nombre impair</strong></p>";
+    }
+
+    } else {
+          echo "<p style='color:red;'>Veuillez entrer un nombre valide.</p>";
+      }
+    }
+    
+?>
 
 <style>
 
@@ -41,9 +53,9 @@
     button {
         background-color : #0d9e8bff;
         border-radius : 5px;
-        padding : 10px;
+        padding : 5px;
         color : white;
-        font-size : 15px;
+        font-size : 10px;
         box-shadow : 10px;
         box-shadow: 0 0 5px #011a17ff;
     }
@@ -53,23 +65,6 @@
     }
 
 </style>
-  
-
-<?php 
-
-$username = "John";
-$password = "Rambo";
-
-if (isset($_POST['username']) && isset($_POST['password']))
-     {
-    if ($_POST['username'] == $username && $_POST['password'] == $password) {
-        echo "C'est pas ma guerre";
-    } else {
-        echo "Votre pire cauchemard";
-    }
-}
-
-?>
-
+    
 </body>
 </html>
