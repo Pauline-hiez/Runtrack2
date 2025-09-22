@@ -18,10 +18,10 @@ $style = isset($_POST['style']) ? $_POST['style'] : 'style1';
 
     <form action="" method="post">
 
-            <label for="username">Utilisateur</label>
+            <label for="username">Utilisateur :</label>
             <input type="text" name="username"><br>
 
-            <label for="password">Mot de passe</label>
+            <label for="password">Mot de passe :</label>
             <input type="password" name="password"><br>
 
         <label for="style">Choisissez un style :</label><br>

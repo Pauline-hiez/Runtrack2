@@ -13,12 +13,12 @@ body {
 
 form {
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff57;
     width: 60%;
     height: 100%;
     margin: 50px auto;
     text-align: center;
-    color: #011429;
+    color: #f6f9fc;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -29,12 +29,21 @@ form {
     background: none;
 }
 
+input, .select {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;  
+    background-color: #0c0453a0;
+    color: rgb(130, 177, 199);
+}
 
 form::before {
   content: "";
   position: absolute;
   inset: 0; 
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(3, 41, 74, 0.5);
   border-radius: 10px;
   z-index: -1; 
 }
