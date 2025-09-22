@@ -10,10 +10,10 @@
 <form method="POST">
 
     <label for="largeur">Largeur</label>
-    <input type="text" name="largeur">
+    <input type="number" name="largeur">
 
     <label for="hauteur">Hauteur</label>
-    <input type="text" name="hauteur">
+    <input type="number" name="hauteur">
     <button>Valider</button>
 
 </form>
@@ -21,10 +21,6 @@
 <hr>
 
 <style>
-
-    pre {
-        line-height: 1;
-    }
 
     form {
       margin-bottom: 20px;
@@ -50,43 +46,71 @@
         font-size : 15px;
         box-shadow : 0 0 5px #011a17ff;
         box-shadow: 0 0 2px #011a17ff;
+        cursor: pointer;
     }
 
     button:hover {
         background-color : #042d67ff;
+        width: 60px;
     }
 
 </style>
 
 <?php
 
-    if (!empty($_POST["largeur"]) && !empty($_POST["hauteur"])) {
-        $largeur = (int)$_POST["largeur"];
-        $hauteur = (int)$_POST["hauteur"];
-
-        echo "<pre>";
-        
-        for ($i = 0; $i < $hauteur; $i++) {
-            echo str_repeat(" ", $hauteur - $i - 1);
-            if ($i == 0) {
-                
-                echo "/\\";
-            } else {
-                echo "/";
-                echo str_repeat(" ", $largeur + 2 * $i);
-                echo "\\";
-            }
-            echo "\n";
-        }
-        
-        for ($j = 0; $j < $hauteur; $j++) {
-            echo "|" . str_repeat(" ", $largeur + 2 * ($hauteur - 1)) . "|\n";
-        }
-        echo "</pre>";
-    }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
+    $largeur = isset($_POST['largeur']) ? (int)$_POST['largeur'] : 0;
+    $hauteur = isset($_POST['hauteur']) ? (int)$_POST['hauteur'] : 0;
+    if ($largeur < 2) $largeur = 2;
+    if ($hauteur < 1) $hauteur = 1;
+
+    
+    $triBase = 2 * $hauteur - 1;
+    $baseWidth = $largeur;
+    if ($triBase > $baseWidth) $baseWidth = $triBase;
+
+    $output = "";
+
+    
+    for ($i = 1; $i <= $hauteur; $i++) {
+        $stars = 2 * $i - 1; 
+        $paddingLeft = (int)(($baseWidth - $stars) / 2);
+        $paddingRight = $baseWidth - $stars - $paddingLeft;
+
+        
+        for ($p = 0; $p < $paddingLeft; $p++) $output .= ' ';
+
+        
+        if ($i == 1) {
+            $output .= '/\\';
+        } else {
+            
+            $output .= '/';
+            for ($m = 0; $m < $stars - 2; $m++) $output .= '-';
+            $output .= '\\';
+        }
+
+        
+        for ($p = 0; $p < $paddingRight; $p++) $output .= ' ';
+        $output .= "\n";
+    }
+
+   
+    for ($r = 0; $r < $hauteur; $r++) {
+        $output .= '|';
+        for ($c = 0; $c < $largeur - 2; $c++) $output .= ' ';
+        $output .= "|\n";
+    }
+
+    echo '<pre style="font-family: monospace; line-height:1;">' . htmlspecialchars($output) . '</pre>';
+}
 
 ?>
+
+    
+
+
     
 </body>
 </html>
