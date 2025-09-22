@@ -29,13 +29,13 @@ $style = isset($_POST['style']) ? $_POST['style'] : 'style1';
         <select name="style" id="style" class="select">
 
             <option value="style1" <?php 
-            if($style=='style') echo 'selected'; ?>>Style 1</option>
+            if($style=='style') echo "selected"; ?>>Style 1</option>
 
             <option value="style2" <?php 
-            if($style=='style2') echo 'selected'; ?>>Style 2</option>
+            if($style=='style2') echo "selected"; ?>>Style 2</option>
 
             <option value="style3" <?php 
-            if($style=='style3') echo 'selected'; ?>>Style 3</option>
+            if($style=='style3') echo "selected"; ?>>Style 3</option>
 
         </select>
         <br><button type="submit">Valider</button>
