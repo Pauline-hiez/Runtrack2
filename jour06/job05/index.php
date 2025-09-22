@@ -26,7 +26,7 @@ $style = isset($_POST['style']) ? $_POST['style'] : 'style1';
 
         <label for="style">Choisissez un style :</label><br>
 
-        <select name="style" id="style">
+        <select name="style" id="style" class="select">
 
             <option value="style1" <?php 
             if($style=='style') echo 'selected'; ?>>Style 1</option>
