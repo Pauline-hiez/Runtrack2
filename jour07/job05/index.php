@@ -17,21 +17,25 @@
 function occurences($str, $char) {
     
     $count = 0;
-    $length = 0;
+    $i = 0;
 
-    while (isset($str[$length])) {
-        $lenght++;
+    while (true) {
+
+        if (!isset($str[$i])) {
+        break;
     }
 
-    for ($i = 0; $i < $length; $i++) {
         if ($str[$i] === $char) {
-            $count++;
-        }
+        $count++;
+    }
+
+        $i++;
+    
     }
 
     return $count;
-    
-    }
+
+}
 
 echo "Le nombre d'occurences est : " . occurences("Italie", "i"); 
 echo "<br>" ;
