@@ -17,13 +17,13 @@
 function occurences($str, $char) {
     
     $count = 0;
-    $lenght = 0;
+    $length = 0;
 
-    while (isset($str[$lenght])) {
+    while (isset($str[$length])) {
         $lenght++;
     }
 
-    for ($i = 0; $i < $lenght; $i++) {
+    for ($i = 0; $i < $length; $i++) {
         if ($str[$i] === $char) {
             $count++;
         }
