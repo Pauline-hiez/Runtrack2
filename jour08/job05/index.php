@@ -82,11 +82,12 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
 }
 
 td {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     text-align: center;
     vertical-align: middle;
     font-size: 50px;
@@ -99,7 +100,7 @@ button {
     font-size: 50px;
     font-family: Arial, sans-serif;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 0 5px #04433bff;
     background-color: #7eb6ae05;
@@ -126,7 +127,6 @@ button:hover {
 .reset-button:hover {
     background-color: #03251fff;
     border-radius: 100%;
-    width: 30%;
 }
 
 table {
@@ -150,19 +150,20 @@ table {
 
 #message {
     font-family: Arial, sans-serif;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
     color: #04433bff;
     margin: 40px;
     display: flex;
     justify-content: center;
+
 }
 
 </style>
 </head>
 <body>
 
-<h1>Morpion</h1>
+<h1>🟢 Morpion ❎</h1>
 
 <form method="post">
     <table>
