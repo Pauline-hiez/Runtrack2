@@ -45,10 +45,10 @@ while (true) {
         $mot = "";
     }
 
-    if ($c === " ") $resultat .= " ";
-    if (!isset($str[$i])) break;
+        if ($c === " ") $resultat .= " ";
+        if (!isset($str[$i])) break;
     }
-    else {
+        else {
         $mot .= $c;
     }
     $i++;
@@ -65,15 +65,15 @@ function cesar($str, $decalage = 2) {
     while (isset($str[$i])) {
         $c = $str[$i];
 
-    if ($c >= "a" && $c <= "z") {
+        if ($c >= "a" && $c <= "z") {
         $decale = (ord($c) - ord("a") + $decalage) % 26;
         $resultat .= chr(ord("a") + $decale);
-    }
-    elseif ($c >= "A" && $c <= "Z") {
+    } 
+        elseif ($c >= "A" && $c <= "Z") {
         $decale = (ord($c) - ord("A") + $decalage) % 26;
         $resultat .= chr(ord("A") + $decale);
-    }   
-    else {
+    } 
+        else {
         $resultat .= $c;
     } 
 
