@@ -10,6 +10,9 @@ function calcule($a, $operation, $b) {
             
         case "*";
             return $a * $b; 
+
+        case "/";
+            return $a / $b;
             
         default:
             return "Opération inconnue";    
@@ -21,5 +24,8 @@ echo "<br>";
 echo calcule(8, "*", 7);
 echo "<br>";
 echo calcule(89, "-", 45);
+echo "<br>";
+echo calcule(100, "/", 8);
+
 
 ?>
