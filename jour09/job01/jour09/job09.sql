@@ -1,4 +1,4 @@
-USE "jour09"
+USE "jour09";
 
 SELECT *
 FROM etudiants
