@@ -4,19 +4,16 @@ try {
     $pdo = new PDO("mysql:host=localhost;dbname=jour09", "root", "");
     $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "SELECT prenom, nom, naissance, sexe, email FROM etudiants";
+    $sql = "SELECT nom, capacite FROM salles";
     $stmt = $pdo->query($sql);
 
     echo "<table border='1'>";
-    echo "<tr><th>Prenom</th><th>Nom</th><th>Naissance</th><th>Sexe</th><th>Email</th></tr>";
+    echo "<tr><th>Nom</th><th>Capacité</th></tr>";
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<tr>";
-        echo "<td>" . $row["prenom"] . "</td>";
         echo "<td>" . $row["nom"] . "</td>";
-        echo "<td>" . $row["naissance"] . "</td>";
-        echo "<td>" . $row["sexe"] . "</td>";
-        echo "<td>" . $row["email"] . "</td>";
+        echo "<td>" . $row["capacite"] . "</td>";
         echo "</tr>";
     }
 
@@ -42,8 +39,3 @@ tr, td, th {
     border-radius: 3px;
 }
 </style>
-
-
-
-
-
